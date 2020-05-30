@@ -53,5 +53,6 @@ Contributor(s):
     <property name="hibernate.id.new_generator_mappings">false</property>
     
     <!-- mapeamentos -->
+    <mapping class="model.Cliente" />
   </session-factory>
 </hibernate-configuration>

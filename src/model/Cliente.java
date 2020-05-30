@@ -31,9 +31,8 @@ public class Cliente {
         super();
     }
     
-    public Cliente(int idCliente, String nome, String endereco) {
+    public Cliente(String nome, String endereco) {
         super();
-        this.idCliente = idCliente;
         this.nome = nome;
         this.endereco = endereco;
     }

@@ -5,8 +5,8 @@
  */
 package blsoftlocadora;
 
-import conexoes.HibernateUtil;
-import org.hibernate.Session;
+import model.Cliente;
+import controller.ClienteController;
 
 /**
  *
@@ -19,19 +19,15 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("Salvando o Cliente");
         
-        session.beginTransaction();
+        ClienteController  clienteController = new ClienteController();
         
-        String sql = "select version()";
+        Cliente cliente = new Cliente("Gustavo Alves da Silva", "Rua dos Goivos, 19");
         
-        String resultado = (String)session.createNativeQuery(sql).getSingleResult();
-        System.out.println(resultado);
+        int idCliente = clienteController.salvaClienteController(cliente);
         
-        session.getTransaction().commit();
-        
-        session.close();
-        
+        System.out.println("ID do Cliente: " + idCliente);
     }
     
 }
