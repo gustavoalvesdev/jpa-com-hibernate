@@ -5,9 +5,6 @@
  */
 package blsoftlocadora;
 
-import model.Cliente;
-import controller.ClienteController;
-
 /**
  *
  * @author Casa
@@ -18,8 +15,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+            
+        // TESTE DE INSERÇÃO DE CLIENTES
         
-        System.out.println("Salvando o Cliente");
+       /* System.out.println("Salvando o Cliente");
         
         ClienteController  clienteController = new ClienteController();
         
@@ -27,7 +26,9 @@ public class Main {
         
         int idCliente = clienteController.salvaClienteController(cliente);
         
-        System.out.println("ID do Cliente: " + idCliente);
+        System.out.println("ID do Cliente: " + idCliente); */
+       
+       new view.Cliente(null, true).setVisible(true);
     }
     
 }
