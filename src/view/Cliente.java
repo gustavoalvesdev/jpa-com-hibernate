@@ -6,6 +6,8 @@
 
 package view;
 
+import controller.ClienteController;
+
 /**
  *
  * @author Casa
@@ -41,6 +43,11 @@ public class Cliente extends javax.swing.JDialog {
         jLabel2.setText("Endereço do Cliente:");
 
         jBtnCadastrar.setText("Cadastrar");
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,6 +89,22 @@ public class Cliente extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+        ClienteController clienteController = new ClienteController();
+        
+        clienteController.salvaClienteController(pegaDadosInterface());
+        
+        
+    }//GEN-LAST:event_jBtnCadastrarActionPerformed
+
+    private model.Cliente pegaDadosInterface() {
+        
+        model.Cliente cliente = new model.Cliente();
+        cliente.setNome(jTfNomeCliente.getText());
+        cliente.setEndereco(jTfEnderecoCliente.getText());
+        return cliente;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -112,7 +135,7 @@ public class Cliente extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Cliente dialog = new Cliente(new javax.swing.JFrame(), true);
+                view.Cliente dialog = new view.Cliente(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
